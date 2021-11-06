@@ -3,22 +3,21 @@ import { getUser } from './Card.service'
 import CardView from './Card.view'
 
 
-export default function Card(username: string): React.ReactElement {
-    const [user, setUser] = useState<any|null>({
-        user:{
-            login: '',
-            bio: '',
-            url: '',
-            html_url: ''
-        }
-    })
+export default function Card(): React.ReactElement {
+  const [username, setUsername] = useState<string>('lucgbrl')
+  const [githubUser, setGithubUser] = useState<string|null|undefined>('gabrieldocs')
     useEffect(()=>{
-        getUser(username? username : 'gabrieldocs')
+        getUser(username)
             .then(response => response)
-            .then(data => console.log(data))
-            // .then(user => setUser(user))
-    },[]) 
+            .then(user => setGithubUser(user))
+    },[username]) 
     return(
-        <CardView user={user} />
+        <>
+            <input 
+                className= "search-field" 
+                placeholder="username"
+                onChange={(e)=>{setUsername(e.target.value)}}/>
+            <CardView githubUser={githubUser}/>
+        </>
     )
 }
