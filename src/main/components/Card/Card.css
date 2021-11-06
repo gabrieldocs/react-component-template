@@ -1,0 +1,56 @@
+.avatar {
+    width: 96px;
+    height: auto;
+    border-radius: 50%;
+    align-self: center;
+
+    border: solid 4px #ddd;
+}
+.card { 
+    padding: 12px 24px;
+    border: solid navy;
+    border-radius: 4px;
+    box-shadow: 4px 4px navy;
+
+    width: 30vw;
+    min-height: 350px;
+
+    background-color: white;
+}
+
+.card-caption {
+    background-color: navy;
+    height: 124px;
+}
+
+.card-header { 
+    padding: 4px;
+
+    border-bottom: solid  #ddd;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    align-items: center;
+}
+
+.card-header > * {
+    margin-right: 12px;
+}
+
+.card-header h3 { 
+    text-transform: uppercase;
+}
+
+button {
+    margin-top: 32px;
+    padding: 12px 24px;
+    border: solid navy;    
+    border-radius: 4px;
+    box-shadow: 4px 4px navy;
+    background-color: white;
+    width: 100%;
+    cursor: pointer;
+    text-transform: uppercase;
+}
